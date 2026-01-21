@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Confirmação de Presença – Julia & Jorge</title>
-  <meta name="description" content="Confirmação de presença e informações para ajudar os noivos na lua de mel." />
+  <title>Confirmacao de Presenca – Julia & Jorge</title>
+  <meta name="description" content="Confirmacao de presenca e informacoes para ajudar os noivos na lua de mel." />
 
   <style>
     :root{
@@ -37,7 +37,7 @@
     @media(max-width:860px){.grid{grid-template-columns:1fr;}}
     .card{
       background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;
+      border-radius:18px; box-shadow:var(--shadow); padding:18px;
     }
     .card h2{margin:0 0 12px; font-size:18px;}
     label{display:block; font-size:14px; margin:10px 0 6px; color:var(--muted);}
@@ -54,21 +54,17 @@
       background:var(--accent); color:#fff;
       font-weight:700; font-size:15px; cursor:pointer;
     }
-    .hint{margin-top:10px; font-size:13px; color:var(--muted);}
-    .pixBox{display:flex; gap:14px; align-items:flex-start;}
-    .qr{
-      width:150px; height:150px;
-      border-radius:14px; border:1px solid var(--border);
-      background:#fff; object-fit:contain;
-    }
+    .hint{margin-top:10px; font-size:13px; color:var(--muted); line-height:1.5;}
     .pixKey{
-      margin:8px 0 10px; padding:10px 12px;
+      margin:12px 0 10px; padding:12px;
       border:1px dashed var(--border); border-radius:12px;
-      font-family:monospace; font-size:14px;
+      font-family:monospace; font-size:15px;
       background:#fffaf5; word-break:break-all;
+      text-align:center;
     }
     .smallBtn{
-      padding:10px 12px; border:1px solid var(--border);
+      display:block; width:100%;
+      padding:10px; border:1px solid var(--border);
       border-radius:12px; background:#fff;
       font-weight:600; cursor:pointer;
     }
@@ -79,53 +75,58 @@
 <body>
   <div class="wrap">
     <header>
-      <span class="pill">Confirmação de presença</span>
-      <h1>Júlia & Jorge</h1>
-      <p class="sub">Por favor, confirme sua presença abaixo 💛</p>
+      <span class="pill">Confirmacao de presenca</span>
+      <h1>Julia & Jorge</h1>
+      <p class="sub">Por favor, confirme sua presenca abaixo 💛</p>
     </header>
 
     <div class="grid">
 
       <section class="card">
-        <h2>Confirmar presença</h2>
+        <h2>Confirmar presenca</h2>
 
-        <form>
+        <form action="mailto:drajuliaperal@gmail.com?subject=Confirmacao%20de%20Presenca%20-%20Casamento%20Julia%20%26%20Jorge"
+              method="POST" enctype="text/plain">
+
           <div class="row">
             <div>
               <label>Nome e sobrenome</label>
-              <input type="text" placeholder="Ex.: Maria Silva">
+              <input type="text" name="Nome" placeholder="Ex.: Maria Silva" required>
             </div>
             <div>
               <label>Quantas pessoas?</label>
-              <select>
+              <select name="Quantidade" required>
+                <option value="">Selecione</option>
                 <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
               </select>
             </div>
           </div>
 
-          <label>Você poderá comparecer?</label>
-          <select>
+          <label>Voce podera comparecer?</label>
+          <select name="Presenca" required>
+            <option value="">Selecione</option>
             <option>Sim, estarei presente</option>
-            <option>Não poderei ir</option>
+            <option>Nao poderei ir</option>
           </select>
 
           <label>Mensagem aos noivos (opcional)</label>
-          <textarea placeholder="Escreva aqui..."></textarea>
+          <textarea name="Mensagem" placeholder="Escreva aqui..."></textarea>
 
-          <button class="btn" type="button">Enviar confirmação</button>
+          <button class="btn" type="submit">Enviar confirmacao</button>
         </form>
       </section>
 
       <aside class="card">
         <h2>Ajudar os noivos com a lua de mel</h2>
 
-        <div class="pixBox"
-          <div>
-            <div class="hint">Se desejar nos presentear com uma ajudinha na lua de mel, é só usar o Pix:</div>
-            <div class="pixKey" id="pixKey">juliaperalborges@outlook.com</div>
-            <button class="smallBtn" onclick="copyPix()">Copiar chave Pix</button>
-          </div>
+        <div class="hint">
+          Se desejar nos presentear com uma ajudinha na lua de mel, ficaremos muito felizes 💛  
+          Basta copiar a chave Pix abaixo:
         </div>
+
+        <div class="pixKey" id="pixKey">juliaperalborges@outlook.com</div>
+
+        <button class="smallBtn" onclick="copyPix()">Copiar chave Pix</button>
       </aside>
 
     </div>
@@ -142,4 +143,4 @@
   </script>
 </body>
 </html>
-<!-- force rebuild -->
+
