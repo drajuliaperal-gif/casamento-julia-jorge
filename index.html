@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Confirmacao de Presenca – Julia & Jorge</title>
-  <meta name="description" content="Confirmacao de presenca e informacoes para ajudar os noivos na lua de mel." />
 
   <style>
     :root{
@@ -20,127 +19,147 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: radial-gradient(1200px 600px at 20% 0%, #fff 0%, var(--bg) 55%) fixed;
+      font-family: system-ui, -apple-system, Arial;
+      background:var(--bg);
       color:var(--text);
     }
-    .wrap{max-width:920px; margin:0 auto; padding:28px 18px 60px;}
-    header{text-align:center; padding:22px 10px 18px;}
-    .pill{
-      display:inline-block; padding:8px 14px; border:1px solid var(--border);
-      background:rgba(255,255,255,.7); border-radius:999px;
-      color:var(--muted); font-size:14px;
-    }
-    h1{margin:14px 0 6px; font-weight:700; font-size:34px;}
-    .sub{margin:0; color:var(--muted); font-size:16px}
-    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:18px;}
-    @media(max-width:860px){.grid{grid-template-columns:1fr;}}
+    .wrap{max-width:900px;margin:auto;padding:28px 18px 60px;}
+    header{text-align:center;margin-bottom:24px}
+    h1{font-size:34px;margin:8px 0}
+    .sub{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
     .card{
-      background:var(--card); border:1px solid var(--border);
-      border-radius:18px; box-shadow:var(--shadow); padding:18px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
     }
-    .card h2{margin:0 0 12px; font-size:18px;}
-    label{display:block; font-size:14px; margin:10px 0 6px; color:var(--muted);}
+    h2{margin-top:0}
+    label{display:block;margin-top:12px;font-size:14px;color:var(--muted)}
     input,select,textarea{
-      width:100%; padding:12px; border:1px solid var(--border);
-      border-radius:12px; font-size:15px;
+      width:100%;
+      padding:12px;
+      margin-top:6px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      font-size:15px;
     }
-    textarea{min-height:90px;}
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    @media(max-width:520px){.row{grid-template-columns:1fr;}}
-    .btn{
-      margin-top:14px; width:100%; padding:12px;
-      border:none; border-radius:12px;
-      background:var(--accent); color:#fff;
-      font-weight:700; font-size:15px; cursor:pointer;
+    textarea{min-height:90px}
+    button{
+      margin-top:18px;
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:var(--accent);
+      color:#fff;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
     }
-    .hint{margin-top:10px; font-size:13px; color:var(--muted); line-height:1.5;}
+    .pixText{
+      text-align:center;
+      margin-bottom:14px;
+      line-height:1.6;
+    }
     .pixKey{
-      margin:12px 0 10px; padding:12px;
-      border:1px dashed var(--border); border-radius:12px;
-      font-family:monospace; font-size:15px;
-      background:#fffaf5; word-break:break-all;
+      margin:14px 0;
+      padding:14px;
+      border:1px dashed var(--border);
+      border-radius:12px;
+      font-family:monospace;
+      font-size:15px;
+      background:#fffaf5;
+      word-break:break-all;
       text-align:center;
     }
-    .smallBtn{
-      display:block; width:100%;
-      padding:10px; border:1px solid var(--border);
-      border-radius:12px; background:#fff;
-      font-weight:600; cursor:pointer;
+    .copyBtn{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:600;
+      cursor:pointer;
     }
-    footer{text-align:center; margin-top:18px; color:var(--muted); font-size:13px;}
+    footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <span class="pill">Confirmacao de presenca</span>
-      <h1>Julia & Jorge</h1>
-      <p class="sub">Por favor, confirme sua presenca abaixo 💛</p>
-    </header>
+<div class="wrap">
 
-    <div class="grid">
+<header>
+  <h1>Julia & Jorge</h1>
+  <p class="sub">Por favor, confirme sua presenca abaixo 💛</p>
+</header>
 
-      <section class="card">
-        <h2>Confirmar presenca</h2>
+<div class="grid">
 
-        <form action="mailto:drajuliaperal@gmail.com?subject=Confirmacao%20de%20Presenca%20-%20Casamento%20Julia%20%26%20Jorge"
-              method="POST" enctype="text/plain">
+  <!-- CONFIRMACAO -->
+  <section class="card">
+    <h2>Confirmar presenca</h2>
 
-          <div class="row">
-            <div>
-              <label>Nome e sobrenome</label>
-              <input type="text" name="Nome" placeholder="Ex.: Maria Silva" required>
-            </div>
-            <div>
-              <label>Quantas pessoas?</label>
-              <select name="Quantidade" required>
-                <option value="">Selecione</option>
-                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-              </select>
-            </div>
-          </div>
+    <form action="mailto:drajuliaperal@gmail.com"
+          method="POST"
+          enctype="text/plain">
 
-          <label>Voce podera comparecer?</label>
-          <select name="Presenca" required>
-            <option value="">Selecione</option>
-            <option>Sim, estarei presente</option>
-            <option>Nao poderei ir</option>
-          </select>
+      <label>Nome e sobrenome</label>
+      <input name="Nome" placeholder="Ex.: Maria Silva" required>
 
-          <label>Mensagem aos noivos (opcional)</label>
-          <textarea name="Mensagem" placeholder="Escreva aqui..."></textarea>
+      <label>Quantidade de pessoas</label>
+      <select name="Quantidade" required>
+        <option value="">Selecione</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+      </select>
 
-          <button class="btn" type="submit">Enviar confirmacao</button>
-        </form>
-      </section>
+      <label>Voce podera comparecer?</label>
+      <select name="Presenca" required>
+        <option value="">Selecione</option>
+        <option>Sim</option>
+        <option>Nao</option>
+      </select>
 
-      <aside class="card">
-        <h2>Ajudar os noivos com a lua de mel</h2>
+      <label>Mensagem aos noivos (opcional)</label>
+      <textarea name="Mensagem" placeholder="Escreva aqui..."></textarea>
 
-        <div class="hint">
-          Se desejar nos presentear com uma ajudinha na lua de mel, ficaremos muito felizes 💛  
-          Basta copiar a chave Pix abaixo:
-        </div>
+      <button type="submit">Enviar confirmacao</button>
+    </form>
+  </section>
 
-        <div class="pixKey" id="pixKey">juliaperalborges@outlook.com</div>
+  <!-- PIX -->
+  <aside class="card">
+    <h2>Deseja presentear os noivos?</h2>
 
-        <button class="smallBtn" onclick="copyPix()">Copiar chave Pix</button>
-      </aside>
-
+    <div class="pixText">
+      Se quiser nos ajudar a tornar nossa lua de mel ainda mais especial,  
+      abaixo esta a chave Pix. <br>
+      Qualquer contribuicao sera recebida com muito carinho 💛
     </div>
 
-    <footer>Feito com carinho 💛</footer>
-  </div>
+    <div class="pixKey" id="pixKey">
+      juliaperalborges@outlook.com
+    </div>
 
-  <script>
-    function copyPix(){
-      const key = document.getElementById("pixKey").innerText;
-      navigator.clipboard.writeText(key);
-      alert("Chave Pix copiada!");
-    }
-  </script>
+    <button class="copyBtn" onclick="copyPix()">Copiar chave Pix</button>
+  </aside>
+
+</div>
+
+<footer>Feito com carinho 💛</footer>
+
+</div>
+
+<script>
+  function copyPix(){
+    const key = document.getElementById("pixKey").innerText;
+    navigator.clipboard.writeText(key);
+    alert("Chave Pix copiada!");
+  }
+</script>
+
 </body>
 </html>
 
