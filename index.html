@@ -47,6 +47,7 @@
       font-size:15px;
     }
     textarea{min-height:90px}
+
     button{
       margin-top:18px;
       width:100%;
@@ -59,11 +60,13 @@
       font-weight:700;
       cursor:pointer;
     }
+
     .pixText{
       text-align:center;
       margin-bottom:14px;
       line-height:1.6;
     }
+
     .pixKey{
       margin:14px 0;
       padding:14px;
@@ -72,9 +75,17 @@
       font-family:monospace;
       font-size:15px;
       background:#fffaf5;
-      word-break:break-all;
+
+      /* Mantém o e-mail em UMA linha */
+      white-space: nowrap;
+      word-break: normal;
+      overflow-wrap: normal;
+
+      /* Em telas pequenas, não “quebra”, só permite rolar lateralmente */
+      overflow-x: auto;
       text-align:center;
     }
+
     .copyBtn{
       width:100%;
       padding:12px;
@@ -84,6 +95,7 @@
       font-weight:600;
       cursor:pointer;
     }
+
     footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px}
   </style>
 </head>
@@ -93,7 +105,7 @@
 
 <header>
   <h1>Julia & Jorge</h1>
-  <p class="sub">Por favor, confirme sua presença abaixo 💛</p>
+  <p class="sub">Por favor, confirme sua presença abaixo.</p>
 </header>
 
 <div class="grid">
@@ -115,11 +127,11 @@
         <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
       </select>
 
-      <label>Voce poderá comparecer?</label>
+      <label>Você poderá comparecer?</label>
       <select name="Presenca" required>
         <option value="">Selecione</option>
         <option>Sim</option>
-        <option>Nao</option>
+        <option>Não</option>
       </select>
 
       <label>Mensagem aos noivos (opcional)</label>
@@ -134,29 +146,29 @@
     <h2>Deseja presentear os noivos?</h2>
 
     <div class="pixText">
-      Se quiser nos ajudar a tornar nossa lua de mel ainda mais especial,  
-      abaixo está a chave Pix. <br>
-      Qualquer contribuicao será recebida com muito carinho 💛
+      Se quiser nos ajudar a tornar nossa lua de mel ainda mais especial, abaixo está a chave Pix.
+      Qualquer contribuição será recebida com muito carinho.
     </div>
 
-    <div class="pixKey" id="pixKey">
-      juliaejorge.celebrar@gmail.com
-    </div>
+    <div class="pixKey" id="pixKey">juliaejorge.celebrar@gmail.com</div>
 
-    <button class="copyBtn" onclick="copyPix()">Copiar chave Pix</button>
+    <button class="copyBtn" type="button" onclick="copyPix()">Copiar Pix</button>
   </aside>
 
 </div>
 
-<footer>Feito com amor </footer>
+<footer>Feito com carinho.</footer>
 
 </div>
 
 <script>
   function copyPix(){
-    const key = document.getElementById("pixKey").innerText;
-    navigator.clipboard.writeText(key);
-    alert("Chave Pix copiada!");
+    const key = document.getElementById("pixKey").innerText.trim();
+    navigator.clipboard.writeText(key).then(() => {
+      alert("Pix copiado.");
+    }).catch(() => {
+      alert("Não foi possível copiar automaticamente. Copie manualmente a chave Pix.");
+    });
   }
 </script>
 
