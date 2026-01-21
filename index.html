@@ -100,6 +100,8 @@
       font-size:16px;
       font-weight:700;
       cursor:pointer;
+      -webkit-appearance:none;
+      appearance:none;
     }
 
     .pixText{
@@ -122,15 +124,21 @@
       text-align:center;
     }
 
+    /* Botão do Pix: agora é input[type=button] */
     .copyBtn{
       width:100%;
+      margin-top:0;
       padding:12px;
       border-radius:12px;
       border:1px solid var(--border);
       background:#ffffff;
-      font-weight:600;
+      color: var(--text);           /* força a cor do texto */
+      font-weight:700;
       cursor:pointer;
       font-size:15px;
+      text-align:center;
+      -webkit-appearance:none;
+      appearance:none;
     }
 
     footer{
@@ -192,15 +200,14 @@
       <h2>Deseja presentear os noivos?</h2>
 
       <div class="pixText">
-        Se quiser nos ajudar a tornar nossa lua de mel ainda mais especial,
-        abaixo está a chave Pix. Qualquer contribuição será recebida com muito carinho.
+        Se quiser nos ajudar a tornar nossa lua de mel ainda mais especial, abaixo está a chave Pix.
+        Qualquer contribuição será recebida com muito carinho.
       </div>
 
-      <div class="pixKey" id="pixKey">
-        juliaejorge.celebrar@gmail.com
-      </div>
+      <div class="pixKey" id="pixKey">juliaejorge.celebrar@gmail.com</div>
 
-      <button class="copyBtn" type="button" onclick="copyPix()">Copiar Pix</button>
+      <!-- A prova de “texto sumindo” -->
+      <input class="copyBtn" type="button" value="Copiar Pix" onclick="copyPix()">
     </aside>
 
   </div>
@@ -222,4 +229,3 @@
 
 </body>
 </html>
-
